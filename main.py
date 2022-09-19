@@ -36,8 +36,8 @@ def create_posts(post: Post):
     return {"data": post_dict}
 
 @app.get("/posts/{id}")
-def get_post(id):
+def get_post(id: int):
     print(id, type(id))
     for post in my_posts:
-        if post["id"] == int(id):
+        if post["id"] == id:
             return {"post_detail": my_posts[id]}
